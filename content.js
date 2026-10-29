@@ -78,23 +78,32 @@ function getIconSet(fileName, isDirectory) {
 
 function addRepositoryListIcons() {
   const fileLinks = document.querySelectorAll(
-    'a[aria-label$="(File)"], a[aria-label$="(Directory)"]'
+    'a[aria-label$="(File)"], a[aria-label$="(Directory)"], a[aria-label="Parent directory"]'
   )
 
   for (const link of fileLinks) {
-    const isDirectory = link.getAttribute('aria-label').endsWith('(Directory)')
+    const ariaLabel = link.getAttribute('aria-label')
+    const isParentDirectory = ariaLabel === 'Parent directory'
+    const isDirectory = isParentDirectory || ariaLabel.endsWith('(Directory)')
     const fileName = link.textContent.trim().toLowerCase()
     const iconSet = getIconSet(fileName, isDirectory)
 
     if (!iconSet) continue
 
     const directoryColumn = link.closest('.react-directory-filename-column')
-    const defaultIcon = directoryColumn?.querySelector(':scope > svg')
+    const defaultIcon = directoryColumn?.querySelector(':scope > svg') ?? link.querySelector('svg')
     defaultIcon?.classList.add('jb-default-icon-hidden')
 
     if (link.querySelector('.jb-icon-pair')) continue
 
-    link.prepend(createIconPair(iconSet))
+    const iconPair = createIconPair(iconSet)
+    const parentDirectoryContent = isParentDirectory ? link.querySelector('div') : null
+
+    if (parentDirectoryContent) {
+      parentDirectoryContent.prepend(iconPair)
+    } else {
+      link.prepend(iconPair)
+    }
   }
 }
 
