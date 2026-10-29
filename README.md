@@ -56,7 +56,8 @@ After changing extension files, reload the extension and refresh the GitHub tab.
 The extension uses plain JavaScript and CSS. There is no build step: edit the files, reload the extension in the browser, then refresh GitHub.
 
 - `manifest.json` — extension metadata and browser configuration
-- `content.js` — finds repository entries and selects icons
+- `icon-sets.js` — maps file extensions and special filenames to light/dark icons
+- `content.js` — finds repository entries and displays the selected icons
 - `styles.css` — icon sizing and theme switching
 - `icons/` — light and dark SVG assets
 
