@@ -33,14 +33,26 @@ const iconSets = {
   }
 }
 
+const fileNameIconSets = {
+  '.gitignore': {
+    light: 'icons/gitignore/gitignore.svg',
+    dark: 'icons/gitignore/gitignore.svg'
+  },
+  '.editorconfig': {
+    light: 'icons/editorConfig/editorConfig.svg',
+    dark: 'icons/editorConfig/editorConfig_dark.svg'
+  }
+}
+
 function addIcons() {
   const fileLinks = document.querySelectorAll('a[aria-label$="(File)"]')
 
   for (const link of fileLinks) {
     const fileName = link.textContent.trim().toLowerCase()
     const extension = Object.keys(iconSets).find(value => fileName.endsWith(value))
+    const iconSet = fileNameIconSets[fileName] ?? iconSets[extension]
 
-    if (!extension) continue
+    if (!iconSet) continue
 
     const directoryColumn = link.closest('.react-directory-filename-column')
     const defaultIcon = directoryColumn?.querySelector(':scope > svg')
@@ -52,7 +64,7 @@ function addIcons() {
     iconPair.className = 'jb-icon-pair'
     iconPair.setAttribute('aria-hidden', 'true')
 
-    for (const [theme, path] of Object.entries(iconSets[extension])) {
+    for (const [theme, path] of Object.entries(iconSet)) {
       const image = document.createElement('img')
       image.className = 'jb-icon jb-icon-' + theme
       image.src = browser.runtime.getURL(path)
