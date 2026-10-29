@@ -1,0 +1,42 @@
+.jb-icon-pair {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.jb-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.jb-icon-dark {
+  display: none;
+}
+
+html[data-color-mode='dark'] {
+  & .jb-icon-light {
+    display: none;
+  }
+
+  & .jb-icon-dark {
+    display: block;
+  }
+}
+
+.jb-default-icon-hidden {
+  display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-color-mode='auto'] {
+    & .jb-icon-light {
+      display: none;
+    }
+
+    & .jb-icon-dark {
+      display: block;
+    }
+  }
+}

@@ -6,7 +6,19 @@
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/json/json.svg",
+        "icons/json/json_dark.svg",
+        "icons/markdown/markdown.svg",
+        "icons/markdown/markdown_dark.svg"
+      ],
+      "matches": ["https://github.com/*"]
     }
   ]
 }
