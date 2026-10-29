@@ -53,7 +53,30 @@ const folderIconSet = {
   dark: 'icons/folder@14x14/folder@14x14_dark.svg'
 }
 
-function addIcons() {
+function createIconPair(iconSet, isTreeItem = false) {
+  const iconPair = document.createElement('span')
+  iconPair.className = isTreeItem ? 'jb-icon-pair jb-icon-pair-tree' : 'jb-icon-pair'
+  iconPair.setAttribute('aria-hidden', 'true')
+
+  for (const [theme, path] of Object.entries(iconSet)) {
+    const image = document.createElement('img')
+    image.className = 'jb-icon jb-icon-' + theme
+    image.src = browser.runtime.getURL(path)
+    image.alt = ''
+    iconPair.append(image)
+  }
+
+  return iconPair
+}
+
+function getIconSet(fileName, isDirectory) {
+  if (isDirectory) return folderIconSet
+
+  const extension = Object.keys(iconSets).find(value => fileName.endsWith(value))
+  return fileNameIconSets[fileName] ?? iconSets[extension]
+}
+
+function addRepositoryListIcons() {
   const fileLinks = document.querySelectorAll(
     'a[aria-label$="(File)"], a[aria-label$="(Directory)"]'
   )
@@ -61,10 +84,7 @@ function addIcons() {
   for (const link of fileLinks) {
     const isDirectory = link.getAttribute('aria-label').endsWith('(Directory)')
     const fileName = link.textContent.trim().toLowerCase()
-    const extension = Object.keys(iconSets).find(value => fileName.endsWith(value))
-    const iconSet = isDirectory
-      ? folderIconSet
-      : fileNameIconSets[fileName] ?? iconSets[extension]
+    const iconSet = getIconSet(fileName, isDirectory)
 
     if (!iconSet) continue
 
@@ -74,20 +94,32 @@ function addIcons() {
 
     if (link.querySelector('.jb-icon-pair')) continue
 
-    const iconPair = document.createElement('span')
-    iconPair.className = 'jb-icon-pair'
-    iconPair.setAttribute('aria-hidden', 'true')
-
-    for (const [theme, path] of Object.entries(iconSet)) {
-      const image = document.createElement('img')
-      image.className = 'jb-icon jb-icon-' + theme
-      image.src = browser.runtime.getURL(path)
-      image.alt = ''
-      iconPair.append(image)
-    }
-
-    link.prepend(iconPair)
+    link.prepend(createIconPair(iconSet))
   }
+}
+
+function addSidebarTreeIcons() {
+  const treeItems = document.querySelectorAll('li[role="treeitem"]')
+
+  for (const treeItem of treeItems) {
+    const text = treeItem.querySelector('[class*="TreeView-item-content-text"]')
+    const visual = treeItem.querySelector('[class*="TreeView-item-visual"]')
+
+    if (!text || !visual) continue
+
+    const fileName = text.textContent.trim().toLowerCase()
+    const isDirectory = treeItem.hasAttribute('aria-expanded')
+    const iconSet = getIconSet(fileName, isDirectory)
+
+    if (!iconSet || visual.querySelector('.jb-icon-pair')) continue
+
+    visual.replaceChildren(createIconPair(iconSet, true))
+  }
+}
+
+function addIcons() {
+  addRepositoryListIcons()
+  addSidebarTreeIcons()
 }
 
 addIcons()
