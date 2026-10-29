@@ -30,13 +30,17 @@ const iconSets = {
   '.tsx': {
     light: 'icons/tsx/tsx.svg',
     dark: 'icons/tsx/tsx_dark.svg'
+  },
+  '.svg': {
+    light: 'icons/image/image.svg',
+    dark: 'icons/image/image_dark.svg'
   }
 }
 
 const fileNameIconSets = {
   '.gitignore': {
-    light: 'icons/gitignore/gitignore.svg',
-    dark: 'icons/gitignore/gitignore.svg'
+    light: 'icons/ignored/ignored.svg',
+    dark: 'icons/ignored/ignored_dark.svg'
   },
   '.editorconfig': {
     light: 'icons/editorConfig/editorConfig.svg',
@@ -44,13 +48,23 @@ const fileNameIconSets = {
   }
 }
 
+const folderIconSet = {
+  light: 'icons/folder@14x14/folder@14x14.svg',
+  dark: 'icons/folder@14x14/folder@14x14_dark.svg'
+}
+
 function addIcons() {
-  const fileLinks = document.querySelectorAll('a[aria-label$="(File)"]')
+  const fileLinks = document.querySelectorAll(
+    'a[aria-label$="(File)"], a[aria-label$="(Directory)"]'
+  )
 
   for (const link of fileLinks) {
+    const isDirectory = link.getAttribute('aria-label').endsWith('(Directory)')
     const fileName = link.textContent.trim().toLowerCase()
     const extension = Object.keys(iconSets).find(value => fileName.endsWith(value))
-    const iconSet = fileNameIconSets[fileName] ?? iconSets[extension]
+    const iconSet = isDirectory
+      ? folderIconSet
+      : fileNameIconSets[fileName] ?? iconSets[extension]
 
     if (!iconSet) continue
 

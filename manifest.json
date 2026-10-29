@@ -29,9 +29,14 @@
         "icons/jsx/jsx_dark.svg",
         "icons/tsx/tsx.svg",
         "icons/tsx/tsx_dark.svg",
-        "icons/gitignore/gitignore.svg",
+        "icons/ignored/ignored.svg",
+        "icons/ignored/ignored_dark.svg",
         "icons/editorConfig/editorConfig.svg",
-        "icons/editorConfig/editorConfig_dark.svg"
+        "icons/editorConfig/editorConfig_dark.svg",
+        "icons/image/image.svg",
+        "icons/image/image_dark.svg",
+        "icons/folder@14x14/folder@14x14.svg",
+        "icons/folder@14x14/folder@14x14_dark.svg"
       ],
       "matches": ["https://github.com/*"]
     }
