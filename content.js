@@ -31,6 +31,10 @@ const iconSets = {
     light: 'icons/tsx/tsx.svg',
     dark: 'icons/tsx/tsx_dark.svg'
   },
+  '.txt': {
+    light: 'icons/text/text.svg',
+    dark: 'icons/text/text_dark.svg'
+  },
   '.svg': {
     light: 'icons/image/image.svg',
     dark: 'icons/image/image_dark.svg'

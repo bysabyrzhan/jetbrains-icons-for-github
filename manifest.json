@@ -29,6 +29,8 @@
         "icons/jsx/jsx_dark.svg",
         "icons/tsx/tsx.svg",
         "icons/tsx/tsx_dark.svg",
+        "icons/text/text.svg",
+        "icons/text/text_dark.svg",
         "icons/ignored/ignored.svg",
         "icons/ignored/ignored_dark.svg",
         "icons/editorConfig/editorConfig.svg",
