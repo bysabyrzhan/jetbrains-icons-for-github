@@ -16,7 +16,19 @@
         "icons/json/json.svg",
         "icons/json/json_dark.svg",
         "icons/markdown/markdown.svg",
-        "icons/markdown/markdown_dark.svg"
+        "icons/markdown/markdown_dark.svg",
+        "icons/html/html.svg",
+        "icons/html/html_dark.svg",
+        "icons/css/css.svg",
+        "icons/css/css_dark.svg",
+        "icons/javaScript/javaScript.svg",
+        "icons/javaScript/javaScript_dark.svg",
+        "icons/typeScript/typeScript.svg",
+        "icons/typeScript/typeScript_dark.svg",
+        "icons/jsx/jsx.svg",
+        "icons/jsx/jsx_dark.svg",
+        "icons/tsx/tsx.svg",
+        "icons/tsx/tsx_dark.svg"
       ],
       "matches": ["https://github.com/*"]
     }

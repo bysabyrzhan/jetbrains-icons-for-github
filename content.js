@@ -1,12 +1,36 @@
 const iconSets = {
   '.json': {
     light: 'icons/json/json.svg',
-    dark: 'icons/json/json_dark.svg',
+    dark: 'icons/json/json_dark.svg'
   },
   '.md': {
     light: 'icons/markdown/markdown.svg',
-    dark: 'icons/markdown/markdown_dark.svg',
+    dark: 'icons/markdown/markdown_dark.svg'
   },
+  '.html': {
+    light: 'icons/html/html.svg',
+    dark: 'icons/html/html_dark.svg'
+  },
+  '.css': {
+    light: 'icons/css/css.svg',
+    dark: 'icons/css/css_dark.svg'
+  },
+  '.js': {
+    light: 'icons/javaScript/javaScript.svg',
+    dark: 'icons/javaScript/javaScript_dark.svg'
+  },
+  '.ts': {
+    light: 'icons/typeScript/typeScript.svg',
+    dark: 'icons/typeScript/typeScript_dark.svg'
+  },
+  '.jsx': {
+    light: 'icons/jsx/jsx.svg',
+    dark: 'icons/jsx/jsx_dark.svg'
+  },
+  '.tsx': {
+    light: 'icons/tsx/tsx.svg',
+    dark: 'icons/tsx/tsx_dark.svg'
+  }
 }
 
 function addIcons() {
@@ -45,5 +69,5 @@ addIcons()
 const observer = new MutationObserver(() => addIcons())
 observer.observe(document.body, {
   childList: true,
-  subtree: true,
+  subtree: true
 })
