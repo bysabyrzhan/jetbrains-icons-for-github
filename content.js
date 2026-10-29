@@ -1,60 +1,60 @@
 const iconSets = {
   '.json': {
-    light: 'icons/json/json.svg',
-    dark: 'icons/json/json_dark.svg'
+    light: 'icons/json/json-light.svg',
+    dark: 'icons/json/json-dark.svg'
   },
   '.md': {
-    light: 'icons/markdown/markdown.svg',
-    dark: 'icons/markdown/markdown_dark.svg'
+    light: 'icons/markdown/markdown-light.svg',
+    dark: 'icons/markdown/markdown-dark.svg'
   },
   '.html': {
-    light: 'icons/html/html.svg',
-    dark: 'icons/html/html_dark.svg'
+    light: 'icons/html/html-light.svg',
+    dark: 'icons/html/html-dark.svg'
   },
   '.css': {
-    light: 'icons/css/css.svg',
-    dark: 'icons/css/css_dark.svg'
+    light: 'icons/css/css-light.svg',
+    dark: 'icons/css/css-dark.svg'
   },
   '.js': {
-    light: 'icons/javaScript/javaScript.svg',
-    dark: 'icons/javaScript/javaScript_dark.svg'
+    light: 'icons/javascript/javascript-light.svg',
+    dark: 'icons/javascript/javascript-dark.svg'
   },
   '.ts': {
-    light: 'icons/typeScript/typeScript.svg',
-    dark: 'icons/typeScript/typeScript_dark.svg'
+    light: 'icons/typescript/typescript-light.svg',
+    dark: 'icons/typescript/typescript-dark.svg'
   },
   '.jsx': {
-    light: 'icons/jsx/jsx.svg',
-    dark: 'icons/jsx/jsx_dark.svg'
+    light: 'icons/jsx/jsx-light.svg',
+    dark: 'icons/jsx/jsx-dark.svg'
   },
   '.tsx': {
-    light: 'icons/tsx/tsx.svg',
-    dark: 'icons/tsx/tsx_dark.svg'
+    light: 'icons/tsx/tsx-light.svg',
+    dark: 'icons/tsx/tsx-dark.svg'
   },
   '.txt': {
-    light: 'icons/text/text.svg',
-    dark: 'icons/text/text_dark.svg'
+    light: 'icons/text/text-light.svg',
+    dark: 'icons/text/text-dark.svg'
   },
   '.svg': {
-    light: 'icons/image/image.svg',
-    dark: 'icons/image/image_dark.svg'
+    light: 'icons/image/image-light.svg',
+    dark: 'icons/image/image-dark.svg'
   }
 }
 
 const fileNameIconSets = {
   '.gitignore': {
-    light: 'icons/ignored/ignored.svg',
-    dark: 'icons/ignored/ignored_dark.svg'
+    light: 'icons/ignored/ignored-light.svg',
+    dark: 'icons/ignored/ignored-dark.svg'
   },
   '.editorconfig': {
-    light: 'icons/editorConfig/editorConfig.svg',
-    dark: 'icons/editorConfig/editorConfig_dark.svg'
+    light: 'icons/editorconfig/editorconfig-light.svg',
+    dark: 'icons/editorconfig/editorconfig-dark.svg'
   }
 }
 
 const folderIconSet = {
-  light: 'icons/folder@14x14/folder@14x14.svg',
-  dark: 'icons/folder@14x14/folder@14x14_dark.svg'
+  light: 'icons/folder/folder-light.svg',
+  dark: 'icons/folder/folder-dark.svg'
 }
 
 function createIconPair(iconSet, isTreeItem = false) {
