@@ -1,58 +1,67 @@
 # JetBrains Icons for GitHub
 
-An independent browser extension that replaces GitHub repository file and folder icons with icons from the IntelliJ Platform icon set.
+![GitHub repository listing in dark theme](screenshots/github-repository-dark.png)
 
-## Preview
+![GitHub repository listing in light theme](screenshots/github-repository-light.png)
 
-<p align="center">
-  <img src="screenshots/github-repository-light.png" alt="GitHub repository listing in light theme" width="49%">
-  <img src="screenshots/github-repository-dark.png" alt="GitHub repository listing in dark theme" width="49%">
-</p>
+---
 
-> This project is not affiliated with or endorsed by JetBrains.
+### About
 
-## Features
+JetBrains Icons for GitHub adds theme-aware file and folder icons to GitHub repository listings and the file tree sidebar. Files with supported extensions get a matching icon; other files use the unknown-file icon.
 
-- Shows file and folder icons in GitHub repository listings and the file tree sidebar.
-- Switches between light and dark icon variants to match GitHub's theme.
-- Uses specific icons for `.css`, `.html`, `.js`, `.json`, `.jsx`, `.md`, `.svg`, `.ts`, `.tsx`, and `.txt` files.
-- Recognizes `.editorconfig` and `.gitignore` by filename.
-- Uses a folder icon for directories and an unknown-file icon for other files.
+This is an independent project and is not affiliated with or endorsed by JetBrains.
 
-## Development status
+---
 
-Early development. The extension currently uses plain JavaScript and CSS; no build step is required.
+### Supported browsers
 
-The extension has been tested in Firefox and Microsoft Edge. Edge 136 or later is required for the `browser.*` API namespace.
+- Firefox
+- Microsoft Edge 136 or later
 
-## Install locally
+The extension has been tested in both browsers.
 
-### Firefox
+---
 
-1. Open `about:debugging` in Firefox.
+### Install locally
+
+#### Firefox
+
+1. Open `about:debugging`.
 2. Select **This Firefox**.
 3. Click **Load Temporary Add-on…**.
-4. Choose the project's `manifest.json` file.
+4. Select the project's `manifest.json` file.
 
-Temporary add-ons are removed when Firefox closes. After changing extension files, reload the add-on from `about:debugging` and refresh the GitHub tab.
-
-### Microsoft Edge
+#### Microsoft Edge
 
 1. Open `edge://extensions`.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
 4. Select the project folder containing `manifest.json`.
 
-After changing extension files, reload the extension and refresh the GitHub tab.
+After changing extension files, reload the extension and refresh the GitHub tab. Temporary Firefox add-ons are removed when Firefox closes.
 
-## Project structure
+---
 
-- `manifest.json` — extension metadata and browser configuration.
-- `content.js` — finds GitHub file and folder entries and selects their icons.
-- `styles.css` — icon sizing and theme switching.
-- `icons/` — light and dark SVG assets.
+### Supported icons
 
-## Icon licenses
+- **File extensions:** `.css`, `.html`, `.js`, `.json`, `.jsx`, `.md`, `.svg`, `.ts`, `.tsx`, `.txt`
+- **Special filenames:** `.editorconfig`, `.gitignore`
+- **Fallbacks:** folders use a folder icon; other files use an unknown-file icon
 
-The included IntelliJ Platform SVG icons are licensed under Apache License 2.0, as identified in each SVG's copyright comment. A copy of the license is included in [`LICENSE-APACHE-2.0.txt`](LICENSE-APACHE-2.0.txt). Keep the original copyright and license comments in the SVG files when modifying or redistributing them.
+---
 
+### Development
+
+The extension uses plain JavaScript and CSS. There is no build step: edit the files, reload the extension in the browser, then refresh GitHub.
+
+- `manifest.json` — extension metadata and browser configuration
+- `content.js` — finds repository entries and selects icons
+- `styles.css` — icon sizing and theme switching
+- `icons/` — light and dark SVG assets
+
+---
+
+### Icon licenses
+
+The included IntelliJ Platform SVG icons are licensed under Apache License 2.0, as indicated in each SVG's copyright comment. The license text is included in [`LICENSE-APACHE-2.0.txt`](LICENSE-APACHE-2.0.txt). Preserve the original copyright and license comments when modifying or redistributing the icons.
