@@ -45,7 +45,7 @@ After changing extension files, reload the extension and refresh the GitHub tab.
 
 ### Supported icons
 
-- **File extensions:** `.css`, `.html`, `.js`, `.json`, `.jsx`, `.md`, `.svg`, `.ts`, `.tsx`, `.txt`
+- **File extensions:** `.css`, `.html`, `.js`, `.jpg`, `.json`, `.jsx`, `.md`, `.png`, `.svg`, `.ts`, `.tsx`, `.txt`
 - **Special filenames:** `.editorconfig`, `.gitignore`
 - **Fallbacks:** folders use a folder icon; other files use an unknown-file icon
 

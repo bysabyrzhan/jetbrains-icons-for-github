@@ -39,6 +39,14 @@ globalThis.githubFileIconConfig = {
     '.svg': {
       light: 'icons/image/image-light.svg',
       dark: 'icons/image/image-dark.svg'
+    },
+    '.png': {
+      light: 'icons/image/image-light.svg',
+      dark: 'icons/image/image-dark.svg'
+    },
+    '.jpg': {
+      light: 'icons/image/image-light.svg',
+      dark: 'icons/image/image-dark.svg'
     }
   },
   byFileName: {
