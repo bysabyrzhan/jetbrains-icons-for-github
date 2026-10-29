@@ -1,0 +1,6 @@
+{
+  "manifest_version": 3,
+  "name": "JetBrains Icons for GitHub",
+  "version": "0.1.0",
+  "description": "Adds file and folder icons to GitHub."
+}
