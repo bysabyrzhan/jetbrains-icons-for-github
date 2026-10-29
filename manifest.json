@@ -38,7 +38,9 @@
         "icons/image/image-light.svg",
         "icons/image/image-dark.svg",
         "icons/folder/folder-light.svg",
-        "icons/folder/folder-dark.svg"
+        "icons/folder/folder-dark.svg",
+        "icons/unknown/unknown-light.svg",
+        "icons/unknown/unknown-dark.svg"
       ],
       "matches": ["https://github.com/*"]
     }

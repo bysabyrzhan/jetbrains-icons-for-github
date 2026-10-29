@@ -57,6 +57,11 @@ const folderIconSet = {
   dark: 'icons/folder/folder-dark.svg'
 }
 
+const unknownIconSet = {
+  light: 'icons/unknown/unknown-light.svg',
+  dark: 'icons/unknown/unknown-dark.svg'
+}
+
 function createIconPair(iconSet, isTreeItem = false) {
   const iconPair = document.createElement('span')
   iconPair.className = isTreeItem ? 'jb-icon-pair jb-icon-pair-tree' : 'jb-icon-pair'
@@ -77,7 +82,7 @@ function getIconSet(fileName, isDirectory) {
   if (isDirectory) return folderIconSet
 
   const extension = Object.keys(iconSets).find(value => fileName.endsWith(value))
-  return fileNameIconSets[fileName] ?? iconSets[extension]
+  return fileNameIconSets[fileName] ?? iconSets[extension] ?? unknownIconSet
 }
 
 function addRepositoryListIcons() {
